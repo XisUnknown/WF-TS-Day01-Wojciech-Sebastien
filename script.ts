@@ -84,7 +84,8 @@ function make_menu(data: [], title: string) {
 }
 
 function make_menu_entry({name, price, comments, imgurl}:
-                         {name: string, price: number, comments: Array<string>}) {
+                         {name: string, price: number, comments: Array<string>,
+                          imgurl: string}) {
   let menu_entry_domobj = document.createElement("li")
   menu_entry_domobj.classList.add("food-menu-entry","list-group-item")
 
@@ -113,12 +114,14 @@ function make_menu_entry({name, price, comments, imgurl}:
       }
     }
 
-  let img_elmt: HTMLImgElement = document.createElement("img")
+  let img_elmt: HTMLImageElement = document.createElement("img")
   img_elmt.classList.add("")
   img_elmt.src = imgurl
 
-  ;[name_elmt, price_elmt, addcmt_input_elmt, addcmt_button_elmt, cmtsbutton_elmt, cmts_elmt]
-    .forEach(el => menu_entry_domobj.appendChild(el))
+  ;[name_elmt, price_elmt, addcmt_input_elmt, addcmt_button_elmt,
+    cmtsbutton_elmt, cmts_elmt, img_elmt].forEach(
+      el => menu_entry_domobj.appendChild(el)
+    )
 
   return menu_entry_domobj
 }

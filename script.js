@@ -3,19 +3,19 @@ var Beilagen = [
         name: "Pommes Frites",
         price: 4.50,
         comments: ["ziemlich waach", "Sallzig und KNusperig gerne Wieder!"],
-        imgurl: "img/"
+        imgurl: ""
     },
     {
         name: "Frankfurter",
         price: 5.50,
         comments: ["mjam mjam MJAM!"],
-        imgurl: "img/"
+        imgurl: ""
     },
     {
         name: "Schinken-Käse-Toast",
         price: 4.50,
         comments: [],
-        imgurl: "img/"
+        imgurl: ""
     },
 ];
 var Hauptspeisen = [
@@ -23,19 +23,19 @@ var Hauptspeisen = [
         name: "Kaiserschmarrn",
         price: 9.90,
         comments: [],
-        imgurl: "img/"
+        imgurl: ""
     },
     {
         name: "Schweinsgulasch",
         price: 10.50,
         comments: [],
-        imgurl: "img/"
+        imgurl: ""
     },
     {
         name: "Cordon Bleu",
         price: 12.00,
         comments: [],
-        imgurl: "img/"
+        imgurl: ""
     },
 ];
 var Getraenke = [
@@ -43,25 +43,25 @@ var Getraenke = [
         name: "Cola 300ml",
         price: 2.50,
         comments: [],
-        imgurl: "img/"
+        imgurl: ""
     },
     {
         name: "Achterl Rotwein",
         price: 3.50,
         comments: [],
-        imgurl: "img/"
+        imgurl: ""
     },
     {
         name: "Achterl Weißwein",
         price: 3.50,
         comments: [],
-        imgurl: "img/"
+        imgurl: ""
     },
     {
         name: "Bier",
         price: 4.00,
         comments: [],
-        imgurl: "img/"
+        imgurl: ""
     },
 ];
 function make_menu(data, title) {
@@ -77,7 +77,7 @@ function make_menu(data, title) {
     return menu_domobj;
 }
 function make_menu_entry(_a) {
-    var name = _a.name, price = _a.price, comments = _a.comments;
+    var name = _a.name, price = _a.price, comments = _a.comments, imgurl = _a.imgurl;
     var menu_entry_domobj = document.createElement("li");
     menu_entry_domobj.classList.add("food-menu-entry", "list-group-item");
     var name_elmt = document.createElement("h4");
@@ -100,7 +100,10 @@ function make_menu_entry(_a) {
                 addcmt_input_elmt.value = null;
             }
         };
-    [name_elmt, price_elmt, addcmt_input_elmt, addcmt_button_elmt, cmtsbutton_elmt, cmts_elmt]
-        .forEach(function (el) { return menu_entry_domobj.appendChild(el); });
+    var img_elmt = document.createElement("img");
+    img_elmt.classList.add("");
+    img_elmt.src = imgurl;
+    [name_elmt, price_elmt, addcmt_input_elmt, addcmt_button_elmt,
+        cmtsbutton_elmt, cmts_elmt, img_elmt].forEach(function (el) { return menu_entry_domobj.appendChild(el); });
     return menu_entry_domobj;
 }
