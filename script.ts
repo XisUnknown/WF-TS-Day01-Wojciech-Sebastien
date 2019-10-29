@@ -2,17 +2,20 @@ const Beilagen: Array<Object> = [
   {
     name: "Pommes Frites",
     price: 4.50,
-    comments: ["ziemlich waach", "Sallzig und KNusperig gerne Wieder!"]
+    comments: ["ziemlich waach", "Sallzig und KNusperig gerne Wieder!"],
+    imgurl: ""
   },
   {
     name: "Frankfurter",
     price: 5.50,
-    comments: ["mjam mjam MJAM!"]
+    comments: ["mjam mjam MJAM!"],
+    imgurl: ""
   },
   {
     name: "Schinken-Käse-Toast",
     price: 4.50,
-    comments: []
+    comments: [],
+    imgurl: ""
   },
 ]
 
@@ -20,17 +23,20 @@ const Hauptspeisen: Array<Object> = [
   {
     name: "Kaiserschmarrn",
     price: 9.90,
-    comments: []
+    comments: [],
+    imgurl: ""
   },
   {
     name: "Schweinsgulasch",
     price: 10.50,
-    comments: []
+    comments: [],
+    imgurl: ""
   },
   {
     name: "Cordon Bleu",
     price: 12.00,
-    comments: []
+    comments: [],
+    imgurl: ""
   },
 ]
 
@@ -38,22 +44,26 @@ const Getraenke: Array<Object> = [
   {
     name: "Cola 300ml",
     price: 2.50,
-    comments: []
+    comments: [],
+    imgurl: ""
   },
   {
     name: "Achterl Rotwein",
     price: 3.50,
-    comments: []
+    comments: [],
+    imgurl: ""
   },
   {
     name: "Achterl Weißwein",
     price: 3.50,
-    comments: []
+    comments: [],
+    imgurl: ""
   },
   {
     name: "Bier",
     price: 4.00,
-    comments: []
+    comments: [],
+    imgurl: ""
   },
 ]
 
@@ -73,7 +83,7 @@ function make_menu(data: [], title: string) {
   return menu_domobj
 }
 
-function make_menu_entry({name, price, comments}:
+function make_menu_entry({name, price, comments, imgurl}:
                          {name: string, price: number, comments: Array<string>}) {
   let menu_entry_domobj = document.createElement("li")
   menu_entry_domobj.classList.add("food-menu-entry","list-group-item")
@@ -102,6 +112,10 @@ function make_menu_entry({name, price, comments}:
         addcmt_input_elmt.value = null
       }
     }
+
+  let img_elmt: HTMLImgElement = document.createElement("img")
+  img_elmt.classList.add("")
+  img_elmt.src = imgurl
 
   ;[name_elmt, price_elmt, addcmt_input_elmt, addcmt_button_elmt, cmtsbutton_elmt, cmts_elmt]
     .forEach(el => menu_entry_domobj.appendChild(el))

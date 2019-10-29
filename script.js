@@ -2,56 +2,66 @@ var Beilagen = [
     {
         name: "Pommes Frites",
         price: 4.50,
-        comments: ["ziemlich waach", "Sallzig und KNusperig gerne Wieder!"]
+        comments: ["ziemlich waach", "Sallzig und KNusperig gerne Wieder!"],
+        imgurl: "img/"
     },
     {
         name: "Frankfurter",
         price: 5.50,
-        comments: ["mjam mjam MJAM!"]
+        comments: ["mjam mjam MJAM!"],
+        imgurl: "img/"
     },
     {
         name: "Schinken-Käse-Toast",
         price: 4.50,
-        comments: []
+        comments: [],
+        imgurl: "img/"
     },
 ];
 var Hauptspeisen = [
     {
         name: "Kaiserschmarrn",
         price: 9.90,
-        comments: []
+        comments: [],
+        imgurl: "img/"
     },
     {
         name: "Schweinsgulasch",
         price: 10.50,
-        comments: []
+        comments: [],
+        imgurl: "img/"
     },
     {
         name: "Cordon Bleu",
         price: 12.00,
-        comments: []
+        comments: [],
+        imgurl: "img/"
     },
 ];
 var Getraenke = [
     {
         name: "Cola 300ml",
         price: 2.50,
-        comments: []
+        comments: [],
+        imgurl: "img/"
     },
     {
         name: "Achterl Rotwein",
         price: 3.50,
-        comments: []
+        comments: [],
+        imgurl: "img/"
     },
     {
         name: "Achterl Weißwein",
         price: 3.50,
-        comments: []
+        comments: [],
+        imgurl: "img/"
     },
     {
         name: "Bier",
         price: 4.00,
-        comments: []
+        comments: [],
+        imgurl: "img/"
     },
 ];
 function make_menu(data, title) {
