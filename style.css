@@ -13,12 +13,12 @@
 /* change the brand and text color */
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
-    color: rgba(255,255,255,.8);
+    color: rgba(0,0,0,.8) !important;
     padding: 0.8rem 1rem;
 }
 /* change the link color and add padding for height */
 .navbar-custom .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 0, 0, 0.5);
     padding: 1rem 1rem;
 }
 /* change the color of active or hovered links */
@@ -29,4 +29,14 @@
 }
 .display-none{
     display: none;
+}
+img{
+    height: 200px;
+    
+    
+}
+.food-menu-entry{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

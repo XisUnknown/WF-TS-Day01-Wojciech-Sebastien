@@ -3,19 +3,19 @@ var Beilagen = [
         name: "Pommes Frites",
         price: 4.50,
         comments: ["ziemlich waach", "Sallzig und KNusperig gerne Wieder!"],
-        imgurl: ""
+        imgurl: "./img/perfekte-pommes-frites.jpg"
     },
     {
         name: "Frankfurter",
         price: 5.50,
         comments: ["mjam mjam MJAM!"],
-        imgurl: ""
+        imgurl: "./img/frankfurter-wuerstel_479.jpg"
     },
     {
         name: "Schinken-Käse-Toast",
         price: 4.50,
         comments: [],
-        imgurl: ""
+        imgurl: "./img/schinken-kaese-toast-img-5086.jpg"
     },
 ];
 var Hauptspeisen = [
@@ -23,19 +23,19 @@ var Hauptspeisen = [
         name: "Kaiserschmarrn",
         price: 9.90,
         comments: [],
-        imgurl: ""
+        imgurl: "./img/2003-03-072.jpg"
     },
     {
         name: "Schweinsgulasch",
         price: 10.50,
         comments: [],
-        imgurl: ""
+        imgurl: "./img/schweinsgulasch.jpg"
     },
     {
         name: "Cordon Bleu",
         price: 12.00,
         comments: [],
-        imgurl: ""
+        imgurl: "./img/cordon-bleu.jpg"
     },
 ];
 var Getraenke = [
@@ -43,25 +43,25 @@ var Getraenke = [
         name: "Cola 300ml",
         price: 2.50,
         comments: [],
-        imgurl: ""
+        imgurl: "./img/Glass_of_Cola.jpg"
     },
     {
         name: "Achterl Rotwein",
         price: 3.50,
         comments: [],
-        imgurl: ""
+        imgurl: "./img/achterlrot.jpg"
     },
     {
         name: "Achterl Weißwein",
         price: 3.50,
         comments: [],
-        imgurl: ""
+        imgurl: "./img/download.jpg"
     },
     {
         name: "Bier",
         price: 4.00,
         comments: [],
-        imgurl: ""
+        imgurl: "./img/bier.jpg"
     },
 ];
 function make_menu(data, title) {
@@ -101,7 +101,7 @@ function make_menu_entry(_a) {
             }
         };
     var img_elmt = document.createElement("img");
-    img_elmt.classList.add("");
+    //img_elmt.classList.add("")
     img_elmt.src = imgurl;
     [name_elmt, price_elmt, addcmt_input_elmt, addcmt_button_elmt,
         cmtsbutton_elmt, cmts_elmt, img_elmt].forEach(function (el) { return menu_entry_domobj.appendChild(el); });
