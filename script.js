@@ -60,7 +60,7 @@ function make_menu(data, title) {
     var menu_title = document.createElement("h2");
     menu_title.textContent = title;
     var menu_listelmt = document.createElement("ul");
-    menu_listelmt.classList.add("food-menu-list");
+    menu_listelmt.classList.add("food-menu-list", "list-group");
     data.forEach(function (o) { return menu_listelmt.appendChild(make_menu_entry(o)); });
     menu_domobj.appendChild(menu_title);
     menu_domobj.appendChild(menu_listelmt);
@@ -69,17 +69,28 @@ function make_menu(data, title) {
 function make_menu_entry(_a) {
     var name = _a.name, price = _a.price, comments = _a.comments;
     var menu_entry_domobj = document.createElement("li");
-    menu_entry_domobj.classList.add("food-menu-entry");
+    menu_entry_domobj.classList.add("food-menu-entry", "list-group-item");
     var name_elmt = document.createElement("h4");
     name_elmt.textContent = name;
     var price_elmt = document.createElement("div");
-    price_elmt.textContent = String(price);
+    price_elmt.textContent = String(price) + "€";
     var cmts_elmt = document.createElement("ul");
     cmts_elmt.classList.add("food-menu-entry-comments", "display-none");
     comments.forEach(function (c) { return cmts_elmt.innerHTML += "<li>" + c + "</li>"; });
     var cmtsbutton_elmt = document.createElement("button");
     cmtsbutton_elmt.textContent = "show comments";
     cmtsbutton_elmt.onclick = function (e) { return cmts_elmt.classList.toggle("display-none"); };
-    [name_elmt, price_elmt, cmtsbutton_elmt, cmts_elmt].forEach(function (el) { return menu_entry_domobj.appendChild(el); });
+    var addcmt_input_elmt = document.createElement("input");
+    var addcmt_button_elmt = document.createElement("button");
+    addcmt_button_elmt.textContent = "add comment";
+    addcmt_button_elmt.onclick =
+        function (e) {
+            if (addcmt_input_elmt.value) {
+                cmts_elmt.innerHTML += "<li>" + addcmt_input_elmt.value + "</li>";
+                addcmt_input_elmt.value = null;
+            }
+        };
+    [name_elmt, price_elmt, addcmt_input_elmt, addcmt_button_elmt, cmtsbutton_elmt, cmts_elmt]
+        .forEach(function (el) { return menu_entry_domobj.appendChild(el); });
     return menu_entry_domobj;
 }

@@ -27,3 +27,6 @@
     color: #ffffff;
     background-color: #ee4400; /* add background-color to active links */
 }
+.display-none{
+    display: none;
+}

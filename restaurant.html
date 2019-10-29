@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -58,6 +59,12 @@
       <h2 class="font-weight-light">Herzhafte österreichische Hausmannskost</h2>
     </div>
   </section>
-  
+  <div class="container" id="container"> </div>
+  <script>
+    var container = document.getElementById("container");
+    container.appendChild(make_menu(Beilagen, "Beilagen"))
+    container.appendChild(make_menu(Hauptspeisen, "Hauptspeisen"))
+    container.appendChild(make_menu(Getraenke, "Getränke"))
+  </script>
 </body>
 </html>
