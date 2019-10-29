@@ -80,6 +80,17 @@ function make_menu_entry(_a) {
     var cmtsbutton_elmt = document.createElement("button");
     cmtsbutton_elmt.textContent = "show comments";
     cmtsbutton_elmt.onclick = function (e) { return cmts_elmt.classList.toggle("display-none"); };
-    [name_elmt, price_elmt, cmtsbutton_elmt, cmts_elmt].forEach(function (el) { return menu_entry_domobj.appendChild(el); });
+    var addcmt_input_elmt = document.createElement("input");
+    var addcmt_button_elmt = document.createElement("button");
+    addcmt_button_elmt.textContent = "add comment";
+    addcmt_button_elmt.onclick =
+        function (e) {
+            if (addcmt_input_elmt.value) {
+                cmts_elmt.innerHTML += "<li>" + addcmt_input_elmt.value + "</li>";
+                addcmt_input_elmt.value = null;
+            }
+        };
+    [name_elmt, price_elmt, addcmt_input_elmt, addcmt_button_elmt, cmtsbutton_elmt, cmts_elmt]
+        .forEach(function (el) { return menu_entry_domobj.appendChild(el); });
     return menu_entry_domobj;
 }

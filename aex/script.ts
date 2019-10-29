@@ -92,12 +92,19 @@ function make_menu_entry({name, price, comments}:
   cmtsbutton_elmt.textContent = "show comments"
   cmtsbutton_elmt.onclick = (e) => cmts_elmt.classList.toggle("display-none")
 
-  let addcmt_elmt: HTMLElement = document.createElement("div")
-  let addcmt_input_elmt: HTMLElement = document.createElement("input")
+  let addcmt_input_elmt: HTMLInputElement = document.createElement("input")
   let addcmt_button_elmt: HTMLElement = document.createElement("button")
-  addcmt_button_elmt
+  addcmt_button_elmt.textContent = "add comment"
+  addcmt_button_elmt.onclick =
+    (e) => { 
+      if(addcmt_input_elmt.value) {
+        cmts_elmt.innerHTML += `<li>${addcmt_input_elmt.value}</li>`
+        addcmt_input_elmt.value = null
+      }
+    }
 
-  ;[name_elmt, price_elmt, cmtsbutton_elmt, cmts_elmt].forEach(el => menu_entry_domobj.appendChild(el))
+  ;[name_elmt, price_elmt, addcmt_input_elmt, addcmt_button_elmt, cmtsbutton_elmt, cmts_elmt]
+    .forEach(el => menu_entry_domobj.appendChild(el))
 
   return menu_entry_domobj
 }
